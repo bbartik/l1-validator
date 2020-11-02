@@ -1,0 +1,10 @@
+---
+ - [ PDX-3850-CORE_GigabitEthernet2/0/24, PDX-3650-STAGING_GigabitEthernet0/10 ]
+ - [ PDX-3850-02_GigabitEthernet1/0/24, PDX-3650-STAGING_GigabitEthernet0/2 ]
+ - [ PDX-3560-STAGING_GigabitEthernet0/10, PDX-3850-CORE_GigabitEthernet2/0/24 ]
+ - [ PDX-3560-STAGING_GigabitEthernet0/2, PDX-3850-02_GigabitEthernet1/0/24 ]
+ - [ PDX-3560-STAGING_GigabitEthernet0/3, PDX-3850-03_GigabitEthernet1/0/24 ]
+ - [ PDX-3850-CORE_TenGigabitEthernet1/1/3, PDX-5548-02_Ethernet1/32 ]
+ - [ PDX-3850-CORE_TenGigabitEthernet2/1/3, PDX-5548-01_Ethernet1/32 ]
+ - [ PDX-3850-CORE_GigabitEthernet2/1/1, PDX-CORE-SWS-3750_GigabitEthernet2/1/1 ] 
+ - [ PDX-3850-CORE_GigabitEthernet1/1/1, PDX-CORE-SWS-3750_GigabitEthernet1/1/1 ]

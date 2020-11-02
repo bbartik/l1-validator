@@ -1,0 +1,26 @@
+---
+PDX-3850-CORE:
+  hostname: 172.28.247.100
+  platform: ios
+  groups:
+   - campus
+PDX-3850-02:
+  hostname: 172.28.247.102
+  platform: ios
+  groups:
+   - campus
+PDX-3560-STAGING:
+  hostname: 172.28.254.10
+  platform: ios
+  groups:
+   - campus
+PDX-5548-01:
+  hostname: 172.28.2.2
+  platform: nxos
+  groups:
+   - datacenter
+PDX-5548-02:
+  hostname: 172.28.2.3
+  platform: nxos
+  groups:
+   - datacenter
