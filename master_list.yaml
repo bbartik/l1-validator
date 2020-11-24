@@ -1,4 +1,5 @@
 ---
+campus:
  - [ PDX-3850-CORE_GigabitEthernet2/0/24, PDX-3650-STAGING_GigabitEthernet0/10 ]
  - [ PDX-3850-02_GigabitEthernet1/0/24, PDX-3650-STAGING_GigabitEthernet0/2 ]
  - [ PDX-3560-STAGING_GigabitEthernet0/10, PDX-3850-CORE_GigabitEthernet2/0/24 ]
@@ -8,3 +9,15 @@
  - [ PDX-3850-CORE_TenGigabitEthernet2/1/3, PDX-5548-01_Ethernet1/32 ]
  - [ PDX-3850-CORE_GigabitEthernet2/1/1, PDX-CORE-SWS-3750_GigabitEthernet2/1/1 ] 
  - [ PDX-3850-CORE_GigabitEthernet1/1/1, PDX-CORE-SWS-3750_GigabitEthernet1/1/1 ]
+datacenter:
+ - [ leaf3_Ethernet1/7, leaf4_Ethernet1/7 ]
+ - [ spine1_Ethernet1/1, leaf1_Ethernet1/1 ]
+ - [ spine1_Ethernet1/2, leaf2_Ethernet1/1 ]
+ - [ spine1_Ethernet1/3, leaf3_Ethernet1/1 ]
+ - [ spine1_Ethernet1/4, leaf4_Ethernet1/1 ]
+ - [ spine2_Ethernet1/1, leaf1_Ethernet1/2 ]
+ - [ spine2_Ethernet1/2, leaf2_Ethernet1/2 ]
+ - [ spine2_Ethernet1/3, leaf3_Ethernet1/2 ]
+ - [ spine2_Ethernet1/4, leaf4_Ethernet1/2 ]
+ - [ spine1_Ethernet1/5, leaf5_Ethernet1/1 ]
+ - [ spine2_Ethernet1/5, leaf5_Ethernet1/2 ]

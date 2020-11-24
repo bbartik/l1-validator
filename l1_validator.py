@@ -16,14 +16,7 @@ yaml = YAML()
 nr = InitNornir(config_file="config.yaml")
 pp = pprint.PrettyPrinter(indent=4)
 
-# you can also set these in the inventory/defaults.yaml file
-#username = input("\nEnter device username: ")
-#password = getpass.getpass("Enter device password: ")
-nr.inventory.defaults.username = "admin"
-nr.inventory.defaults.password = "cisco123"
 
-def duplicate(connections):
-    return None
 
 def l1_validate(task):
 
@@ -54,18 +47,25 @@ def l1_validate(task):
 
     return nbr_list
 
-
-# initialize live complete neighbor list
-live_nbr_list = []
 # filter if needed
-#campus_switches = nr.filter(F(groups__contains="datacenter"))
-result = nr.run(task=l1_validate)
+group_list = [x for x in nr.inventory.groups]
+group = input(f"\nPlease select a group: {group_list} ")
+
+# you can also set these in the inventory/defaults.yaml file
+username = input("\nEnter device username: ")
+password = getpass.getpass("Enter device password: ")
+nr.inventory.defaults.username = username
+nr.inventory.defaults.password = password
+
+filtered = nr.filter(F(groups__contains=group))
+result = filtered.run(task=l1_validate)
 
 if len(result.failed_hosts) > 0:
     print("One or more hosts failed to connect. Please run again.")
     print(result.failed_hosts)
     sys.exit()
 
+live_nbr_list = []
 # populate new list from all nodes
 for x in result.keys():
     x_links = result[x].result
@@ -73,6 +73,7 @@ for x in result.keys():
         live_nbr_list.append(link)
 
 # remove duplicates, this is the set that will be used for comparison
+# initialize live complete neighbor list
 live_nbr_set = set()
 for nbr in live_nbr_list:
     live_nbr_set.add(tuple(nbr))
@@ -80,25 +81,18 @@ temp_live_nbr_list = list(live_nbr_set)
 live_nbr_list = [set(x) for x in temp_live_nbr_list ]
 
 # load master list of links
-with open("l1_spine_leaf.yaml", "r") as f:
+with open("master_list.yaml", "r") as f:
     master_file = f.read()
 
 # initialize empty set of lists, create set of tuples for set thoery operations
 master_list = []
 connections = yaml.load(master_file)
-for conn in connections:
+for conn in connections[group]:
     #pdb.set_trace()
     # convert to set to normalize the order
     conn = set(conn)
     # convert to tuple so you can add it to the list and convert to set
     master_list.append(conn)
-
-'''
-deugging the set order issue
-print(len(master_set))
-pprint.pprint(master_set)
-sys.exit()
-'''
 
 # subtract existing list from master list to find missing links
 missing = [x for x in master_list if x not in live_nbr_list]
