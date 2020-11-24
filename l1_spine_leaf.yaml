@@ -1,0 +1,12 @@
+---
+ - [ leaf3_Ethernet1/7, leaf4_Ethernet1/7 ]
+ - [ spine1_Ethernet1/1, leaf1_Ethernet1/1 ]
+ - [ spine1_Ethernet1/2, leaf2_Ethernet1/1 ]
+ - [ spine1_Ethernet1/3, leaf3_Ethernet1/1 ]
+ - [ spine1_Ethernet1/4, leaf4_Ethernet1/1 ]
+ - [ spine2_Ethernet1/1, leaf1_Ethernet1/2 ]
+ - [ spine2_Ethernet1/2, leaf2_Ethernet1/2 ]
+ - [ spine2_Ethernet1/3, leaf3_Ethernet1/2 ]
+ - [ spine2_Ethernet1/4, leaf4_Ethernet1/2 ]
+ - [ spine1_Ethernet1/5, leaf5_Ethernet1/1 ]
+ - [ spine2_Ethernet1/5, leaf5_Ethernet1/2 ]

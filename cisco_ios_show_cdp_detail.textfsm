@@ -4,6 +4,6 @@ Value Required LOCALINTF (\S+)
 Value Required REMOTEINTF (\S+)
 
 Start
-  ^Device\sID:\s${DEVICE}
+  ^Device\sID:\s?${DEVICE}\(.+\)
   ^Platform:.*Capabilities:\s${CAPABILITIES}
   ^Interface:\s${LOCALINTF},\s+Port\sID\s\(outgoing port\):\s${REMOTEINTF} -> Record

@@ -1,0 +1,31 @@
+---
+spine1:
+  hostname: 172.28.87.61
+  platform: nxos
+  groups:
+   - datacenter
+spine2:
+  hostname: 172.28.87.62
+  platform: nxos
+  groups:
+   - datacenter
+leaf1:
+  hostname: 172.28.87.63
+  platform: nxos
+  groups:
+   - datacenter
+leaf2:
+  hostname: 172.28.87.64
+  platform: nxos
+  groups:
+   - datacenter
+leaf3:
+  hostname: 172.28.87.65
+  platform: nxos
+  groups:
+   - datacenter
+leaf4:
+  hostname: 172.28.87.66
+  platform: nxos
+  groups:
+   - datacenter
